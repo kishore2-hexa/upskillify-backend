@@ -38,7 +38,7 @@ async def upload_resume(
         raise HTTPException(status_code=400, detail="Only PDF and DOCX files are allowed")
 
     # ✅ Save file to disk
-    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") # Output: 2025-06-25_15-23-26
     filename = f"{timestamp}_{file.filename}"
     file_path = os.path.join(UPLOAD_DIR, filename)
 
